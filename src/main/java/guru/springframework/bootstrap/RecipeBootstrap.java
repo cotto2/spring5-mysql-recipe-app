@@ -43,29 +43,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
     private List<Recipe> getRecipes() {
 
-        UnitOfMeasure each = new UnitOfMeasure();
-        each.setDescription("Each");
-        unitOfMeasureRepository.save(each);
-
-        UnitOfMeasure tablespoon = new UnitOfMeasure();
-        tablespoon.setDescription("Tablespoon");
-        unitOfMeasureRepository.save(tablespoon);
-
-        UnitOfMeasure teaspoon = new UnitOfMeasure();
-        teaspoon.setDescription("Teaspoon");
-        unitOfMeasureRepository.save(teaspoon);
-
-        UnitOfMeasure dash = new UnitOfMeasure();
-        dash.setDescription("Dash");
-        unitOfMeasureRepository.save(dash);
-
-        UnitOfMeasure pint = new UnitOfMeasure();
-        pint.setDescription("Pint");
-        unitOfMeasureRepository.save(pint);
-
-        UnitOfMeasure cup = new UnitOfMeasure();
-        cup.setDescription("Cup");
-        unitOfMeasureRepository.save(cup);
 
         List<Recipe> recipes = new ArrayList<>(2);
 
@@ -114,13 +91,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         UnitOfMeasure pintUom = dashUomOptional.get();
         UnitOfMeasure cupsUom = cupsUomOptional.get();
 
-        Category american = new Category();
-        american.setDescription("American");
-        categoryRepository.save(american);
-
-        Category mexican = new Category();
-        mexican.setDescription("Mexican");
-        categoryRepository.save(mexican);
 
         //get Categories
         Optional<Category> americanCategoryOptional = categoryRepository.findByDescription("American");
